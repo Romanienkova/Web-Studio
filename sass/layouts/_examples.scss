@@ -1,3 +1,10 @@
+.examples-section {
+	display: none;
+	@include desktop {
+		display: block;
+	}
+}
+
 .examples {
    display: flex;
    gap: 30px;

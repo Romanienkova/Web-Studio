@@ -1,10 +1,36 @@
 @mixin line-up {
-	display: flex;
+   display: flex;
    align-items: center;
 }
 
-@mixin fontWSL ($fw, $fspx, $lh) {
-	font-weight: $fw;
-	font-size: $fs;
-	line-height: $lh;
+@mixin fontWSL($fw, $fs, $lh) {
+   font-weight: $fw;
+   font-size: $fs + px;
+   line-height: $lh;
+}
+
+@mixin mobile {
+   @media screen and (min-width: 480px) {
+      @content;
+   }
+}
+
+@mixin tablet {
+   @media screen and (min-width: 768px) {
+      @content;
+   }
+}
+
+@mixin desktop {
+   @media screen and (min-width: 1200px) {
+      @content;
+   }
+}
+
+@mixin retina {
+   @media (min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      @content;
+   }
 }

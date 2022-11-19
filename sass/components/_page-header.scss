@@ -5,5 +5,27 @@
 .header .container {
    @include line-up;
 
-   height: 79px;
+   height: 59px;
+	@include desktop {
+		height: 79px;
+	}
+}
+
+.mob-menu-open,
+.mob-menu-close {
+	margin-left: auto;
+
+	height: 40px;
+
+	background-color: transparent;
+}
+
+.mob-menu {
+	position: fixed;
+	top: 0;
+	
+	width: 100vw;
+	height: 100vh;
+
+	background-color: $primaryWhiteColor;
 }

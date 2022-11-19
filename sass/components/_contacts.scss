@@ -1,8 +1,12 @@
 .contacts {
-   display: flex;
+	display: none;
+	@include desktop {
+		display: flex;
 
-   gap: 30px;
-   margin-left: 318px;
+		gap: 30px;
+		margin-left: 318px;
+	}
+   
 }
 
 .contacts__link {

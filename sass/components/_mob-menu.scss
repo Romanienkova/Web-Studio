@@ -1,0 +1,67 @@
+.mob-menu-open,
+.mob-menu-close {
+   margin-left: auto;
+
+   height: 40px;
+
+   background-color: transparent;
+}
+
+.mob-menu {
+   position: fixed;
+   top: 0;
+   left: 0;
+   z-index: 1;
+
+   padding: 48px 25px;
+   width: 100vw;
+   height: 100vh;
+
+   background-color: $primaryWhiteColor;
+}
+
+.mob-menu-close {
+   position: absolute;
+   top: 10px;
+   right: 15px;
+}
+
+.mob-menu-close {
+   fill: #000;
+   transition: fill $durationTiming;
+   &:hover,
+   &:focus {
+      fill: $accentColor;
+   }
+}
+
+.mob-site-nav {
+   display: flex;
+   flex-flow: column;
+   gap: 32px;
+
+   margin-bottom: 303px;
+
+   @include fontWSL(500, 40, 1.18);
+   letter-spacing: 0.02em;
+}
+
+.mob-site-nav__link {
+   color: $titleTextColor;
+   transition: color $durationTiming;
+   &:hover,
+   &:focus {
+      color: $accentColor;
+   }
+}
+
+.mob-contacts {
+}
+.mob-contacts__link {
+}
+.mob-social {
+}
+.mob-social__item {
+}
+.mob-social__link {
+}

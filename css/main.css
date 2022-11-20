@@ -65,7 +65,7 @@ img {
   padding-top: 60px;
   padding-bottom: 60px;
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 768px) {
   .section {
     padding-top: 94px;
     padding-bottom: 94px;
@@ -122,7 +122,7 @@ img {
           align-items: center;
   height: 59px;
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 768px) {
   .header__container {
     height: 79px;
   }
@@ -134,6 +134,12 @@ img {
   height: 40px;
   background-color: transparent;
 }
+@media screen and (min-width: 768px) {
+  .mob-menu-open,
+.mob-menu-close {
+    display: none;
+  }
+}
 
 .mob-menu {
   position: fixed;
@@ -144,6 +150,13 @@ img {
   width: 100vw;
   height: 100vh;
   background-color: #fff;
+  opacity: 1;
+  -webkit-transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.mob-menu.is-hidden {
+  opacity: 0;
+  pointer-events: none;
 }
 
 .mob-menu-close {
@@ -185,6 +198,62 @@ img {
 .mob-site-nav__link:hover, .mob-site-nav__link:focus {
   color: #2196f3;
 }
+.mob-site-nav__link.current--link {
+  color: #2196f3;
+}
+
+.mob-contacts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 32px;
+  margin-bottom: 64px;
+}
+
+.mob-contacts__link {
+  color: #2196f3;
+  font-weight: 500;
+  font-size: 34px;
+  line-height: 1.18;
+  letter-spacing: 0.02em;
+}
+
+.mob-contacts__link.mail {
+  color: #757575;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 1.17;
+}
+
+.mob-social {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.mob-social__item {
+  border-left: 1px solid rgba(33, 33, 33, 0.2);
+}
+.mob-social__item:first-child {
+  border-left: none;
+}
+
+.mob-social__link {
+  padding-left: 10px;
+  padding-right: 10px;
+  color: #2196f3;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.22;
+  letter-spacing: 0.02em;
+}
+.mob-social__link.no-paddig-left {
+  padding-left: 0;
+}
 
 .logo {
   padding-top: 16px;
@@ -192,13 +261,25 @@ img {
   color: #000;
   font-family: "Raleway", sans-serif;
   font-weight: 700;
-  font-size: 26px;
-  line-height: 1.19;
+  font-size: 24px;
+  line-height: 1.17;
+}
+@media screen and (min-width: 768px) {
+  .logo {
+    padding-top: 26px;
+    padding-bottom: 26px;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 1.19;
+  }
 }
 @media screen and (min-width: 1200px) {
   .logo {
     padding-top: 24px;
     padding-bottom: 24px;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 1.19;
   }
 }
 
@@ -217,7 +298,7 @@ img {
 .navigation {
   display: none;
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 768px) {
   .navigation {
     display: block;
   }
@@ -228,7 +309,7 @@ img {
   display: -ms-flexbox;
   display: flex;
   gap: 50px;
-  margin-left: 93px;
+  margin-left: 92px;
 }
 
 .site-nav__link {
@@ -269,13 +350,24 @@ img {
 .contacts {
   display: none;
 }
+@media screen and (min-width: 768px) {
+  .contacts {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    gap: 10px;
+    margin-left: 83px;
+  }
+}
 @media screen and (min-width: 1200px) {
   .contacts {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     gap: 30px;
-    margin-left: 318px;
+    margin-left: 322px;
   }
 }
 
@@ -286,15 +378,22 @@ img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding-top: 32px;
-  padding-bottom: 32px;
-  color: inherit;
-  letter-spacing: 0.02em;
   font-weight: 500;
-  font-size: px;
-  line-height: 1.14;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.02em;
+  color: inherit;
   -webkit-transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+@media screen and (min-width: 1200px) {
+  .contacts__link {
+    padding-top: 32px;
+    padding-bottom: 32px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.14;
+  }
 }
 .contacts__link:hover, .contacts__link:focus {
   color: #2196f3;

@@ -1,6 +1,6 @@
 .navigation {
 	display: none;
-	@include desktop {
+	@include tablet {
 		display: block;
 	}
 }
@@ -9,7 +9,7 @@
    display: flex;
    gap: 50px;
 
-   margin-left: 93px;
+   margin-left: 92px;
 }
 
 .site-nav__link {

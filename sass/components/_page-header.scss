@@ -6,7 +6,7 @@
    @include line-up;
 
    height: 59px;
-	@include desktop {
+	@include tablet {
 		height: 79px;
 	}
 }

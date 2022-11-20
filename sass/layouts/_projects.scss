@@ -5,7 +5,13 @@
 }
 
 .projects__item {
-   width: calc((100% - 30px * 2) / 3);
+	@include tablet {
+		width: calc((100% - 30px) / 2);
+	}
+	@include desktop {
+		width: calc((100% - 30px * 2) / 3);
+	}
+   
 
    transition: box-shadow $durationTiming;
 

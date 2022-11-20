@@ -1,23 +1,26 @@
 .footer {
    padding-top: 60px;
    padding-bottom: 60px;
-	margin: 0;
+   margin: 0;
 
    background-color: #2f303a;
 }
 
 .footer .container {
    display: flex;
-	flex-wrap: wrap;
-	gap: 60px;
-	justify-content: center;
+   flex-wrap: wrap;
+   gap: 60px;
+   justify-content: center;
+	@include desktop {
+		flex-wrap: nowrap;
+	}
 }
 
 .address {
    margin-top: 20px;
 }
 
-.address__item  + .address__item {
+.address__item + .address__item {
    margin-top: 9px;
 }
 
@@ -29,10 +32,10 @@
 
    transition: color $durationTiming;
 
-		&:hover,
-		&:focus {
-			color: $accentColor;
-		}
+   &:hover,
+   &:focus {
+      color: $accentColor;
+   }
 }
 
 .address__item:first-child .link {
@@ -40,32 +43,50 @@
 
    transition: color $durationTiming;
 
-		&:hover,
-		&:focus {
-			color: $accentColor;
-		}
+   &:hover,
+   &:focus {
+      color: $accentColor;
+   }
 }
 
 .footer__block {
-	text-align: center;
+   text-align: center;
+   @include desktop {
+      text-align: left;
+   }
+}
+
+.footer-top-tab {
+	display: flex;
+	flex-direction: column;
+	gap: 60px;
+   @include tablet {
+		flex-direction: row;
+      gap: 165px;
+   }
 	@include desktop {
-		text-align: left;
+		gap: 93px;
 	}
 }
 
+.footer__block--tab {
+   display: flex;
+   flex-direction: column;
+}
+
 .footer__block--title {
-	display: block;
+   display: block;
 
    margin-bottom: 20px;
-	@include desktop {
-		margin-top: 12px;
-	}
+   @include tablet {
+      margin-top: 12px;
+   }
 
    color: $primaryWhiteColor;
 
    text-transform: uppercase;
    letter-spacing: 0.03em;
-	@include fontWSL(700, 14, 1.14);
+   @include fontWSL(700, 14, 1.14);
 }
 
 .footer__block .social__link {
@@ -73,11 +94,11 @@
 
    transition: background-color $durationTiming;
 
-		&:hover,
-		&:focus {
-			background-color: $accentColor;
-			outline: -1px solid $accentColor;
-		}
+   &:hover,
+   &:focus {
+      background-color: $accentColor;
+      outline: -1px solid $accentColor;
+   }
 }
 
 .footer__block .social__icon {
@@ -88,26 +109,28 @@
    margin-top: 23px;
 }
 
-
 .form-block {
-	@include desktop {
-		display: flex;
-		align-items: center;
-		gap: 12px;
-	}
+   @include desktop {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+   }
 }
 
 .form-block__input {
-	display: block;
+   display: block;
    padding: 15px 16px;
-	
-	margin-bottom: 20px;
 
-	width: 450px;
-	@include desktop {
-		width: 358px;
-		margin-bottom: 0;
+   margin-bottom: 20px;
+
+	@include mobile {
+		width: 450px;
 	}
+   
+   @include desktop {
+      width: 358px;
+      margin-bottom: 0;
+   }
    border: 1px solid rgba(255, 255, 255, 0.3);
    border-radius: 4px;
 
@@ -115,15 +138,15 @@
    background-color: var(--footer-bg-color);
    color: rgba(255, 255, 255, 0.6);
 
-	@include fontWSL(null, 16, 1.25);
+   @include fontWSL(null, 16, 1.25);
 
-	transition: border-color $durationTiming;
+   transition: border-color $durationTiming;
 
-		&:hover,
-		&:focus {
-			border-color: $accentColor;
-			outline: transparent;
-		}
+   &:hover,
+   &:focus {
+      border-color: $accentColor;
+      outline: transparent;
+   }
 }
 
 .footer__button {
@@ -133,11 +156,10 @@
    justify-content: space-between;
 
    padding: 10px 28px;
-	margin-left: auto;
-	margin-right: auto;
-	@include desktop {
-		
-	}
+   margin-left: auto;
+   margin-right: auto;
+   @include desktop {
+   }
 
    min-width: 200px;
    min-height: 50px;
@@ -148,14 +170,14 @@
    color: $primaryWhiteColor;
 
    letter-spacing: 0.06em;
-	@include fontWSL(700, 16, 1.88);
+   @include fontWSL(700, 16, 1.88);
 
    transition: background-color $durationTiming;
 
-		&:hover,
-		&:focus {
-			background-color: #188ce8;
-		}
+   &:hover,
+   &:focus {
+      background-color: #188ce8;
+   }
 }
 
 .footer__button--send-icon {

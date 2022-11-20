@@ -9,13 +9,12 @@
    background-color: rgba(0, 0, 0, 0.2);
    opacity: 1;
 
-   transition: background-color $durationTiming,
-      opacity $durationTiming;
+   transition: background-color $durationTiming, opacity $durationTiming;
 
-		&.is-hidden {
-		opacity: 0;
-		pointer-events: none;
-		}
+   &.is-hidden {
+      opacity: 0;
+      pointer-events: none;
+   }
 }
 
 .modal {
@@ -25,15 +24,20 @@
 
    padding: 40px;
 
-   min-width: 528px;
-   min-height: 581px;
+   min-width: 450px;
+   min-height: 609px;
+   @include desktop {
+      min-width: 528px;
+      min-height: 581px;
+   }
+
    border-radius: 4px;
 
    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
       0px 2px 1px rgba(0, 0, 0, 0.2);
    background-color: $primaryWhiteColor;
 
-	text-align: center;
+   text-align: center;
 
    opacity: 1;
 
@@ -70,18 +74,19 @@
 
    transition: fill $durationTiming;
 
-		.close-modal:hover &,
-		.close-modal:focus & {
-		fill: $accentColor;
-		}
+   .close-modal:hover &,
+   .close-modal:focus & {
+      fill: $accentColor;
+   }
 }
 
 .form-heading {
    color: $titleTextColor;
+   @include fontWSL(700, 20, 1.5);
 
-   font-weight: 600;
-   font-size: 20px;
-   line-height: calc(23 / 20);
+   @include desktop {
+      line-height: calc(23 / 20);
+   }
 }
 
 .modal-filds {
@@ -135,10 +140,10 @@
 
    transition: fill $durationTiming;
 
-		.input-block input:hover + &,
-		.input-block input:focus + & {
-			fill: $accentColor;
-		}
+   .input-block input:hover + &,
+   .input-block input:focus + & {
+      fill: $accentColor;
+   }
 }
 
 .form-modal-label textarea {
@@ -147,13 +152,13 @@
    min-height: 120px;
    resize: none;
 
-		&::placeholder {
-			color: rgba(117, 117, 117, 0.5);
+   &::placeholder {
+      color: rgba(117, 117, 117, 0.5);
 
-			font-size: 12px;
-			line-height: calc(14 / 12);
-			letter-spacing: 0.01em;
-		}
+      @include desktop {
+         font-size: 12px;
+      }
+   }
 }
 
 .box {
@@ -163,46 +168,50 @@
 
    margin-bottom: 30px;
 
-   line-height: 1.71;
+   @include fontWSL(null, 12, 1.17);
+
+   @include desktop {
+      @include fontWSL(null, 14, 1.71);
+   }
 }
 
 .check-span {
-	display: flex;
-	align-items: center;
-	justify-content: center;
+   display: flex;
+   align-items: center;
+   justify-content: center;
 
-	margin-right: 8px;
+   margin-right: 8px;
 
-	width: 16px;
-	height: 15px;
-	border-radius: 2px;
-	border: 2px solid $titleTextColor;
+   width: 16px;
+   height: 15px;
+   border-radius: 2px;
+   border: 2px solid $titleTextColor;
 
-	transition: background-color $durationTiming;
+   transition: background-color $durationTiming;
 }
 
 .icon-check {
-	fill: transparent;
+   fill: transparent;
 
-	transition: fill $durationTiming;
+   transition: fill $durationTiming;
 }
 
 .checkbox:checked + .check-span {
-	border: transparent;
+   border: transparent;
 
-	background-color: $accentColor;
-	background-size: contain;
-	background-origin: border-box;
+   background-color: $accentColor;
+   background-size: contain;
+   background-origin: border-box;
 }
 
 .checkbox:focus + .check-span {
-	border-color: $accentColor;
+   border-color: $accentColor;
 }
 
 .checkbox:checked + .check-span > .icon-check {
-	fill: $primaryWhiteColor;
+   fill: $primaryWhiteColor;
 }
 
 .form-link {
-	color: $accentColor;
+   color: $accentColor;
 }

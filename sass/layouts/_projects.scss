@@ -5,36 +5,38 @@
 }
 
 .projects__item {
-	@include tablet {
-		width: calc((100% - 30px) / 2);
-	}
-	@include desktop {
-		width: calc((100% - 30px * 2) / 3);
-	}
-   
+   @include tablet {
+      width: calc((100% - 30px) / 2);
+   }
+   @include desktop {
+      width: calc((100% - 30px * 2) / 3);
+   }
 
    transition: box-shadow $durationTiming;
 
-	&:hover {
-		box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
-			1px 4px 6px rgba(0, 0, 0, 0.16);
-	}
+   &:hover {
+      box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12),
+         0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+   }
 }
 
-
-
 .projects__link {
+   display: flex;
+   flex-direction: column;
+   height: 100%;
+
    transition: box-shadow $durationTiming;
 
-		&:focus {
-			display: block;
-			outline: transparent;
-			box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
-				1px 4px 6px rgba(0, 0, 0, 0.16);
-		}
+   &:focus {
+      display: block;
+      outline: transparent;
+      box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12),
+         0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+   }
 }
 
 .brdr-line {
+   flex-grow: 1;
    padding: 19px 23px;
    border: 1px solid #eeeeee;
    border-top: 0;
@@ -46,7 +48,7 @@
    color: $titleTextColor;
 
    letter-spacing: 0.06em;
-	@include fontWSL(null, 16, 2);
+   @include fontWSL(null, 18, 2);
 }
 
 .project__text {
@@ -65,7 +67,13 @@
    bottom: 0;
    right: 0;
 
-   padding: 63px 24px;
+   padding: 77px 24px;
+   @include tablet {
+      padding: 52px 24px 74px;
+   }
+   @include desktop {
+      padding: 63px 24px;
+   }
 
    width: 100%;
    height: 100%;
@@ -79,8 +87,7 @@
    visibility: hidden;
 
    transform: translateY(100%);
-   transition: transform 500ms $timingFunction,
-      visibility 500ms $timingFunction;
+   transition: transform 500ms $timingFunction, visibility 500ms $timingFunction;
 }
 
 .projects__item:hover .thumb__text {
@@ -88,6 +95,5 @@
 
    visibility: visible;
 
-   transition: transform 500ms $timingFunction,
-      visibility 500ms $timingFunction;
+   transition: transform 500ms $timingFunction, visibility 500ms $timingFunction;
 }
